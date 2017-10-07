@@ -1,0 +1,14 @@
+ImagePrint.py -- Image Printing Subsystem
+Copyright 2008-2017 Chris Gonnerman
+All Rights Reserved
+See the LICENSE file for more information.
+
+------------------------------------------------------------------------------
+
+ImagePrint.py defines a class for generating images, using the same "printing"
+interface as MSWinPrint.py.  Combined with MetaPrint.py, it can be used to
+create print previews.
+
+document is a class for creating and running print jobs.  Presently, the 
+source is the only documentation for this class.
+
