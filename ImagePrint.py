@@ -110,20 +110,20 @@ class document:
     def line(self, from_, to):
         if self.reset:
             self.newimage()
-        self.draw.line(( from_, to ), fill = (0, 0, 0))
+        self.draw.line(( from_, to ), fill = self.ink)
 
     def rectangle(self, box):
         if self.reset:
             self.newimage()
-        self.draw.line(((box[0], box[1]), (box[2], box[1])), fill = (0, 0, 0))
-        self.draw.line(((box[2], box[1]), (box[2], box[3])), fill = (0, 0, 0))
-        self.draw.line(((box[2], box[3]), (box[0], box[3])), fill = (0, 0, 0))
-        self.draw.line(((box[0], box[3]), (box[0], box[1])), fill = (0, 0, 0))
+        self.draw.line(((box[0], box[1]), (box[2], box[1])), fill = self.ink)
+        self.draw.line(((box[2], box[1]), (box[2], box[3])), fill = self.ink)
+        self.draw.line(((box[2], box[3]), (box[0], box[3])), fill = self.ink)
+        self.draw.line(((box[0], box[3]), (box[0], box[1])), fill = self.ink)
 
     def text(self, position, text):
         if self.reset:
             self.newimage()
-        self.draw.text(position, text, font = self.font, fill = (0, 0, 0))
+        self.draw.text(position, text, font = self.font, fill = self.ink)
 
     def setfont(self, name, size, bold = None, italic = None):
         if self.reset:
@@ -149,12 +149,11 @@ class document:
     def setink(self, ink):
         if self.reset:
             self.newimage()
-        self.pagedata.append(("setink", (ink,)))
+        self.ink = ink
 
     def setfill(self, onoff):
         if self.reset:
             self.newimage()
-        self.pagedata.append(("setfill", (onoff,)))
 
 
 # end of file.
